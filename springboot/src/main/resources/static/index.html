@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chap08. SpringBoot + MyBatis C.R.U.D Practice</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        /* 컨테이너 스타일 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 카드 형식의 섹션 */
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 카드 내의 타이틀 */
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 링크 스타일 */
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Chap08. SpringBoot + MyBatis C.R.U.D Practice</h1>
+
+<div class="container">
+    <!-- Create Section -->
+    <div class="card">
+        <h3>1. C(Create): INSERT</h3>
+        <button onclick="location.href='/menu/regist'">신규 메뉴 등록</button>
+    </div>
+
+    <!-- Read Section -->
+    <div class="card">
+        <h3>2. R(Read): SELECT</h3>
+        <button onclick="location.href='/menu/list'">전체 메뉴 조회</button>
+    </div>
+
+    <!-- Update Section -->
+    <div class="card">
+        <h3>3. U(Update): UPDATE</h3>
+        <p>세부 메뉴 조회로...</p>
+    </div>
+
+    <!-- Delete Section -->
+    <div class="card">
+        <h3>4. D(Delete): DELETE</h3>
+        <p>세부 메뉴 조회로...</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 CRUD Practice - Designed for SpringBoot + MyBatis
+</footer>
+
+</body>
+</html>
