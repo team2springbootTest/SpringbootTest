@@ -34,5 +34,11 @@ public class MenuService {
         menuMapper.registNewMenu(newMenu);
 
     }
+
+    public MenuDTO selectOne(int code) {
+        System.out.println("서비스단 쿼리문 확인"+menuMapper.findMenuByCode(code));
+        return menuMapper.findMenuByCode(code);
+    }
 }
+
 
