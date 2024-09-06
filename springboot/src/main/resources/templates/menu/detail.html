@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>세부정보 조회</title>
+</head>
+<body>
+ 연결 확인
+<!-- 정보화면+ 수정하기는 오류가 안 났을 때만, -->
+ <div>
+     <p>메뉴번호: <span th:text="${result.code}"></span></p>
+     <p>메뉴이름: <span th:text="${result.name}"></span></p>
+     <p>메뉴가격: <span th:text="${result.price}"></span></p>
+     <p>카테고리코드: <span th:text="${result.categoryCode}"></span></p>
+     <p>판매상태: <span th:text="${result.orderableStatus}"></span></p>
+ </div>
+
+ <form th:action="@{/menu/edit/{code}(code=${result.code})}">
+     <button type="submit">수정하기</button>
+ </form>
+ <form th:action="@{/menu/delete/{code}(code=${result.code})}" method="post">
+     <button type="submit">삭제하기</button>
+ </form>
+
+<button onclick="location.href='/menu/list'"> 목록으로 </button>
+ <button onclick="location.href='/'">메인으로</button>
+
+</body>
+</html>
