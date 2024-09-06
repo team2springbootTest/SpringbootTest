@@ -75,7 +75,7 @@ public class MenuController {
     }
 
 
-    @GetMapping("/menu/detail/{code}")
+    @GetMapping("/detail/{code}")
     public String selectOne(@PathVariable(value = "code") int code, RedirectAttributes redirectAttributes) {
         MenuDTO menu =  menuService.selectOne(code);
 
@@ -83,10 +83,12 @@ public class MenuController {
         //null 일 때 처리 -> detail화면으로 가서 하기
         if(menu!= null)
             redirectAttributes.addFlashAttribute("result", menu);
+        System.out.println("리다이렉트 보냄");
         return "redirect:/menu/detail";
     }
 
-    @GetMapping("/menu/detail")
+    @GetMapping("/detail")
     public void detail() {
+        System.out.println("리다이렉트가 안닿음");
     }
 }
