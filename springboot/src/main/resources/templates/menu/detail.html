@@ -3,26 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>세부정보 조회</title>
+    <style>
+        /* 전체 페이지 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 카드 스타일 */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* 제목 스타일 */
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        /* 정보 텍스트 스타일 */
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 버튼 그룹을 가운데 정렬 */
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* 양쪽 버튼 간격 */
+        form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-<!-- 정보화면+ 수정하기는 오류가 안 났을 때만, -->
- <div>
-     <p>메뉴번호: <span th:text="${result.code}"></span></p>
-     <p>메뉴이름: <span th:text="${result.name}"></span></p>
-     <p>메뉴가격: <span th:text="${result.price}"></span></p>
-     <p>카테고리코드: <span th:text="${result.categoryCode}"></span></p>
-     <p>판매상태: <span th:text="${result.orderableStatus}"></span></p>
- </div>
 
- <form th:action="@{/menu/edit/{code}(code=${result.code})}">
-     <button type="submit">수정하기</button>
- </form>
- <form th:action="@{/menu/delete/{code}(code=${result.code})}" method="post">
-     <button type="submit">삭제하기</button>
- </form>
+<!-- 정보화면 -->
+<div class="container">
+    <h1>세부 정보 조회</h1>
+    <p>메뉴번호: <span th:text="${result.code}"></span></p>
+    <p>메뉴이름: <span th:text="${result.name}"></span></p>
+    <p>메뉴가격: <span th:text="${result.price}"></span></p>
+    <p>카테고리코드: <span th:text="${result.categoryCode}"></span></p>
+    <p>판매상태: <span th:text="${result.orderableStatus}"></span></p>
 
-<button onclick="location.href='/menu/list'"> 목록으로 </button>
- <button onclick="location.href='/'">메인으로</button>
+    <div class="button-group">
+        <form th:action="@{/menu/edit/{code}(code=${result.code})}">
+            <button type="submit">수정하기</button>
+        </form>
+        <form th:action="@{/menu/delete/{code}(code=${result.code})}" method="post">
+            <button type="submit">삭제하기</button>
+        </form>
+    </div>
+
+    <div class="button-group">
+        <button onclick="location.href='/menu/list'"> 목록으로 </button>
+        <button onclick="location.href='/'">메인으로</button>
+    </div>
+</div>
 
 </body>
 </html>
