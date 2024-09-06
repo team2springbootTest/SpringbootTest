@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.ohgiraffers.springboot")
 @MapperScan(basePackages = "com.ohgiraffers.springboot", annotationClass = Mapper.class)
-
 public class SpringbootApplication {
 
     public static void main(String[] args) {
