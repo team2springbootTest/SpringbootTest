@@ -1,5 +1,6 @@
 package com.ohgiraffers.springboot.menu.model.service;
 
+
 import com.ohgiraffers.springboot.menu.model.dao.MenuMapper;
 import com.ohgiraffers.springboot.menu.model.dto.CategoryDTO;
 import com.ohgiraffers.springboot.menu.model.dto.MenuDTO;
@@ -10,17 +11,20 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class Regist {
-
+public class MenuService {
     private final MenuMapper menuMapper;
 
     @Autowired
-    public Regist(MenuMapper menuMapper) {
-        this.menuMapper = menuMapper;
+    public MenuService(MenuMapper menuMapper) {
+        this.menuMapper = menuMapper;}
+
+    @Transactional
+    public void deleteMenu(int code) {menuMapper.deleteMenu(code);}
+    public List<MenuDTO> findAllMenu() {
+        return menuMapper.findAllMenu();
     }
 
     public List<CategoryDTO> findAllCategory() {
-
         return menuMapper.findAllCategory();
     }
 
@@ -31,3 +35,4 @@ public class Regist {
 
     }
 }
+
